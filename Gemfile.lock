@@ -2,6 +2,8 @@ PATH
   remote: .
   specs:
     tsclient (0.0.1)
+      json
+      values (~> 1.8)
 
 GEM
   remote: https://rubygems.org/
@@ -36,6 +38,7 @@ GEM
       rubocop (= 1.35.1)
       rubocop-performance (= 1.14.3)
     unicode-display_width (2.3.0)
+    values (1.8.0)
 
 PLATFORMS
   arm64-darwin-21
