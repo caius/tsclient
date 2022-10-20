@@ -16,6 +16,8 @@ All notable changes to this project will be documented below. The format is base
 
 ## [Unreleased]
 
+- Added: bare bones of a functioning wrapper on macOS
+
 ## [0.0.1] - 2022-10-20
 
 - Added: Initial release

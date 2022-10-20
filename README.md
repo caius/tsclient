@@ -18,7 +18,15 @@ If bundler is not being used to manage dependencies, install the gem by executin
 
 ## Usage
 
-TODO.
+```ruby
+client = Tsclient.default_client
+
+client.tailscale_ips
+# => ["100.100.100.1", "fd7a:115c:a1e0::1"]
+
+client.whois "100.100.100.1"
+# => => #<Tsclient::Profile identifier="bob.bobbity@example.com", name="Bob Bobbity", profile_pic_url="www.google.com/images/errors/robot.png", human=true>
+```
 
 ## Development
 

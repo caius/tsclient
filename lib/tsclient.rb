@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require_relative "tsclient/client"
+
 module Tsclient
   def self.default_client
     return @default_client if defined?(@default_client)
