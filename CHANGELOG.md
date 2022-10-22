@@ -16,7 +16,9 @@ All notable changes to this project will be documented below. The format is base
 
 ## [Unreleased]
 
-- Added: bare bones of a functioning wrapper on macOS
+- Added: Client can query whois a remote address
+- Added: Client can query current tailscale IPs
+- Added: `Tsclient.default_client` works on macOS
 
 ## [0.0.1] - 2022-10-20
 
