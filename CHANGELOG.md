@@ -16,6 +16,11 @@ All notable changes to this project will be documented below. The format is base
 
 ## [Unreleased]
 
+## [0.1.1] - 2022-10-22
+
+- Changed: pinned dependencies to major versions
+- Fixed: Changelog link in gemspec
+
 ## [0.1.0] - 2022-10-22
 
 - Added: Client can query whois a remote address

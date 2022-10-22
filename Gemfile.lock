@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    tsclient (0.1.0)
+    tsclient (0.1.1)
       json (~> 2.5)
       values (~> 1.8)
 
