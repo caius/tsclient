@@ -11,4 +11,4 @@ end
 
 require "standard/rake"
 
-task default: %i[test standard]
+task default: %i[standard spec]
