@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
-require_relative "tsclient/client"
+require "zeitwerk"
+loader = Zeitwerk::Loader.for_gem
+loader.setup
 
 module Tsclient
   def self.default_client
@@ -24,3 +26,5 @@ module Tsclient
     @default_client = Client.new(uri: uri)
   end
 end
+
+loader.eager_load

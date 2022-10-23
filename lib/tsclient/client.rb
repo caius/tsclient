@@ -3,9 +3,6 @@
 require "net/http"
 require "json"
 
-require_relative "./result"
-require_relative "./profile"
-
 module Tsclient
   class Client
     def initialize(uri:)

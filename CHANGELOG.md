@@ -16,6 +16,8 @@ All notable changes to this project will be documented below. The format is base
 
 ## [Unreleased]
 
+- Changed: Switch to Zeitwerk for loading internally
+
 ## [0.1.1] - 2022-10-22
 
 - Changed: pinned dependencies to major versions
