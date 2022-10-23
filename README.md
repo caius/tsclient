@@ -4,6 +4,10 @@
 
 Client library wrapping the [Tailscale localapi][localapi]. This lets you do things like find out the identity of another machine talking to you on the tailnet, or interrogate the current machine's info.
 
+Tsclient attempts to figure out the correct url for your [Tailscale localapi][localapi] based on what Operating System you are running. On macOS it connects over localhost to the randomly assigned port with the randomly generated password, provided you're running `Tailscale.app` as the same user as the ruby process. On linux it assumes the tailscaled socket is in the default location in `/run`.
+
+If you're running a custom setup and need to tell `Tsclient` where your `tailscaled` socket is, you can either set `TSCLIENT_API_URI` to either a `http://` or `unix://` URI, or programatically you can pass it as an argument when creating an instance of `Tsclient::Client`.
+
 [localapi]: https://github.com/tailscale/tailscale/blob/main/ipn/localapi/localapi.go
 
 ## Installation
