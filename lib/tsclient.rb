@@ -5,7 +5,7 @@ loader = Zeitwerk::Loader.for_gem
 loader.setup
 
 module Tsclient
-  def self.default_client(api_finder: FindApiUri.new)
+  def self.default_client(api_finder: ApiFinder.new)
     return @default_client if defined?(@default_client)
 
     if (uri = api_finder.call)
