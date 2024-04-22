@@ -8,12 +8,12 @@ describe Tsclient::ApiFinder do
 
       uri = Tsclient::ApiFinder.new.call(env: fake_env)
 
-      _(uri).must_equal(fake_env["TSCLIENT_API_URI"])
+      _(uri).must_equal(URI(fake_env["TSCLIENT_API_URI"]))
     end
   end
 
   describe "on macOS with Tailscale.app running" do
-    it "returns http uri with auth and port" do
+    it "returns URI::HTTP with auth and port" do
       # Setup a home dir with the correct file path we expect on macOS to find port/password in filename
       fake_home = Dir.mktmpdir(%w[tsclient spec]).tap do |home|
         dir = Pathname.new(home).join("Library", "Group Containers", "#{SecureRandom.alphanumeric(5)}.io.tailscale.ipn.macos")
@@ -24,7 +24,7 @@ describe Tsclient::ApiFinder do
 
       uri = Tsclient::ApiFinder.new.call(env: fake_env, ruby_platform: "arm64-darwin21")
 
-      _(uri).must_equal("http://:totes1sekrit@localhost:1337")
+      _(uri).must_equal(URI("http://:totes1sekrit@localhost:1337"))
     ensure
       FileUtils.remove_entry(fake_home) if defined?(fake_home)
     end
