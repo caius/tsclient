@@ -9,6 +9,11 @@ module Tsclient
         URI(env.fetch("TSCLIENT_API_URI"))
       elsif ruby_platform["darwin"]
         # Running on macOS, api port & auth are in a specific filename
+        if (tsfile = Pathname.glob("/Library/Tailscale/sameuserproof-*").first)
+          port = tsfile.basename.to_s.split('-').last
+          password = File.read(tsfile).chomp
+          return URI("http://:#{password}@localhost:#{port}")
+        end
         if (tsfile = Pathname.glob("#{env["HOME"]}/Library/Group Containers/*.io.tailscale.ipn.macos/sameuserproof-*-*").first)
           _, port, password = tsfile.basename.to_s.split("-", 3)
           URI("http://:#{password}@localhost:#{port}")
