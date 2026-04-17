@@ -13,8 +13,8 @@ Gem::Specification.new do |spec|
   spec.homepage = "https://github.com/caius/tsclient"
   spec.license = "MIT"
 
-  # We support ruby versions still supported by core
-  spec.required_ruby_version = ">= 2.7.0"
+  # Supported versions: https://endoflife.date/ruby
+  spec.required_ruby_version = ">= 3.3"
 
   spec.metadata["homepage_uri"] = spec.homepage
   spec.metadata["source_code_uri"] = spec.homepage
